@@ -6,12 +6,11 @@ package LIB;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
 /**
  *
  * @author Amar Pajarito
  */
-import java.util.HashMap;
-
 public class Room {
     private String name;
     private String number;
@@ -19,7 +18,6 @@ public class Room {
     private int floorNumber;
     private HashMap<String, Equipment> hashEq = new HashMap<>();
     
-    // Constructor
     public Room(String name, String number, String floorId, int floorNumber) {
         this.name = name;
         this.number = number;
@@ -27,12 +25,10 @@ public class Room {
         this.floorNumber = floorNumber;
     }
 
-    // Method to add equipment to the room
     public void addEquipment(Equipment equipment) {
         hashEq.put(equipment.getId(), equipment);
     }
 
-    // Display all equipment in the room
     public void listAllEquipment() {
         System.out.println("Equipment in Room: " + name);
         for (Equipment equipment : hashEq.values()) {
@@ -40,7 +36,6 @@ public class Room {
         }
     }
 
-    // Display equipment needing replacement
     public void listEquipmentToReplace() {
         System.out.println("Equipment in Room: " + name + " Needing Replacement:");
         for (Equipment equipment : hashEq.values()) {
@@ -50,7 +45,6 @@ public class Room {
         }
     }
 
-    // Get the equipment count
     public int getEquipmentCount() {
         return hashEq.size();
     }

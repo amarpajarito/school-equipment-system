@@ -16,7 +16,6 @@ public abstract class Equipment {
     protected String location;
     protected String quantity;
 
-    // Constructor with individual parameters
     public Equipment(String id, String name, String type, String condition, String location, String quantity) {
         this.id = id;
         this.name = name;
@@ -26,7 +25,6 @@ public abstract class Equipment {
         this.quantity = quantity;
     }
 
-    // Constructor that accepts a String array
     public Equipment(String[] str) {
         if (str.length == 6) {
             this.id = str[0];
@@ -40,10 +38,17 @@ public abstract class Equipment {
         }
     }
 
-    // Display information in the desired format
     public void displayInfo() {
         System.out.println("ID: " + id + ", Name: " + name + ", Type: " + type + ", Condition: " + condition 
                            + ", Location: " + location + ", Quantity: " + quantity);
     }
 
-    // Getters and setters (
+    public String getId() {
+        return id;
+    }
+
+    public String getCondition() {
+        return condition;
+    }
+}
+

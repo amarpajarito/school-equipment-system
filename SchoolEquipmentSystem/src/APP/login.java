@@ -66,7 +66,6 @@ public class login extends javax.swing.JFrame {
         usernameButton.setBackground(new java.awt.Color(247, 93, 89));
         usernameButton.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         usernameButton.setForeground(new java.awt.Color(255, 255, 255));
-        usernameButton.setText("Enter Username");
         usernameButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameButtonActionPerformed(evt);
