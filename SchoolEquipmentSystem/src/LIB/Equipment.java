@@ -4,11 +4,15 @@
  */
 package LIB;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /**
  *
  * @author Amar Pajarito
  */
-public abstract class Equipment {
+public class Equipment implements Backend {
     protected String id;
     protected String name;
     protected String type;
@@ -37,18 +41,30 @@ public abstract class Equipment {
             throw new IllegalArgumentException("Array must have exactly 6 elements.");
         }
     }
+    
+    @Override
+    public void register() {
+        // SQL query to insert equipment with room information
+        String query = "INSERT INTO EQUIPMENT (id, name, type, condition, location, quantity) VALUES (?, ?, ?, ?, ?, ?)";
 
-    public void displayInfo() {
-        System.out.println("ID: " + id + ", Name: " + name + ", Type: " + type + ", Condition: " + condition 
-                           + ", Location: " + location + ", Quantity: " + quantity);
-    }
+        try {
+            DatabaseConnection connect = DatabaseConnection.getInstance();
+            Connection conn = connect.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(query);
 
-    public String getId() {
-        return id;
-    }
+            pstmt.setString(1, id);
+            pstmt.setString(2, name);
+            pstmt.setString(3, type);
+            pstmt.setString(4, condition);
+            pstmt.setString(5, location);
+            pstmt.setString(6, quantity);
+            pstmt.executeUpdate();
 
-    public String getCondition() {
-        return condition;
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 }
+    
 
