@@ -5,6 +5,7 @@
 
 package APP;
 import LIB.DatabaseConnection;
+import LIB.Room;
 import LIB.Equipment;
 import LIB.Facade;
 import LIB.IFacade;
@@ -76,15 +77,16 @@ public class ManageEquipments extends javax.swing.JFrame {
                 String name = nameText.getText();
                 String type = String.valueOf(typeBox.getSelectedItem());
                 String condition = String.valueOf(conditionBox.getSelectedItem());
-                String location = String.valueOf(locationBox.getSelectedItem());
+                String locationName = String.valueOf(locationBox.getSelectedItem());
                 String quantity = quantityText.getText();
 
-                if ("".equals(id) || "".equals(name) || "".equals(type) || "".equals(condition) || "".equals(location) || "".equals(quantity)) {
+                if ("".equals(id) || "".equals(name) || "".equals(type) || "".equals(condition) || "".equals(locationName) || "".equals(quantity)) {
                 JOptionPane.showMessageDialog(this, "ERROR: Insufficient Information!");
                 } else {
-                IFacade create = new Facade(new Equipment(id, name, type, condition, location, quantity));
-                create.registerEquipment();
-                update();
+                    Room location = new Room(locationName);
+                    IFacade create = new Facade(new Equipment(id, name, type, condition, location, quantity));
+                    create.registerEquipment();
+                    update();
                 }
             } catch (HeadlessException | NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "ERROR: Please Check Your Entries and Try Again!");
@@ -154,19 +156,25 @@ public class ManageEquipments extends javax.swing.JFrame {
                     int rowsDeleted = stmt.executeUpdate(query);
                     if (rowsDeleted > 0) {
                         JOptionPane.showMessageDialog(this, "Equipment record deleted successfully.");
+                        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                        int selectedRow = jTable1.getSelectedRow();
+                        if (selectedRow != -1) {
+                            model.removeRow(selectedRow);
+                        }
+                        selectedEquipmentID = 0;
                     } else {
                         JOptionPane.showMessageDialog(this, "ERROR: Record not found.");
                     }
                     conn.close();
                     update();
                 } catch (SQLException e) {
-                JOptionPane.showMessageDialog(this, "ERROR: " + e.getMessage());
+                    e.printStackTrace();
+                    JOptionPane.showMessageDialog(this, "ERROR: " + e.getMessage());
                 }
             }
         }
     }
-
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -310,10 +318,6 @@ public class ManageEquipments extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(379, 379, 379)
-                .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -364,13 +368,17 @@ public class ManageEquipments extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jSeparator3)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(379, 379, 379)
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addGap(15, 15, 15)
                 .addComponent(jLabel7)
-                .addGap(9, 9, 9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -432,19 +440,17 @@ public class ManageEquipments extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-        // Check if the table has any rows
         int selectedRow = jTable1.getSelectedRow();
-        if (selectedRow != -1) { // Ensure that a row is actually selected
+        if (selectedRow != -1) { 
             selectedEquipmentID = Integer.parseInt(String.valueOf(jTable1.getValueAt(selectedRow, 0)));
-            idText.setText(String.valueOf(jTable1.getValueAt(selectedRow, 0))); // Assuming this is your equipmentID
+            idText.setText(String.valueOf(jTable1.getValueAt(selectedRow, 0))); 
             nameText.setText(String.valueOf(jTable1.getValueAt(selectedRow, 1)));
             typeBox.setSelectedItem(String.valueOf(jTable1.getValueAt(selectedRow, 2)));
             conditionBox.setSelectedItem(String.valueOf(jTable1.getValueAt(selectedRow, 3)));
             locationBox.setSelectedItem(String.valueOf(jTable1.getValueAt(selectedRow, 4)));
             quantityText.setText(String.valueOf(jTable1.getValueAt(selectedRow, 5)));
         } else {
-        // Optionally, you can clear input fields if no row is selected
-        selectedEquipmentID = 0; // Reset the selected equipment ID
+        selectedEquipmentID = 0; 
         idText.setText("");
         nameText.setText("");
         typeBox.setSelectedIndex(0);

@@ -10,19 +10,14 @@ package LIB;
  */
 
 public class Room {
-    private String name;
-    private String number; 
-    private String floorId;
-    private int floorNumber;
+    private String roomName; 
 
-    public Room(String name, String number, String floorId, int floorNumber) {
-        this.name = name;
-        this.number = number;
-        this.floorId = floorId;
-        this.floorNumber = floorNumber;
+    public Room(String roomName) {
+        this.roomName = roomName;
     }
 
     public String getRoom() {
-        return number; 
+        return roomName;
     }
 }
+
