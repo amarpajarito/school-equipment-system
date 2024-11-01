@@ -18,7 +18,7 @@ import java.sql.SQLException;
  */
 public class DatabaseToCSVExporter {
     private final String DB_URL = "jdbc:sqlite:SchoolEquipmentSystem.db";
-    private static final String CSV_FILE_PATH = "C:/Users/Amar Pajarito/Desktop/College Files/2ND_TERM1/CSS123L/school-equipment-system/SchoolEquipmentSystem/src/LIB/equipment_export.csv";
+    private static final String CSV_FILE_PATH = "C:/Users/Amar Pajarito/Desktop/College Files/2ND_TERM1/CSS123L/school-equipment-system/SchoolEquipmentSystem/src/CSV/equipment_export.csv";
 
     public void exportToCSV() {
         try (Connection conn = DriverManager.getConnection(DB_URL);
