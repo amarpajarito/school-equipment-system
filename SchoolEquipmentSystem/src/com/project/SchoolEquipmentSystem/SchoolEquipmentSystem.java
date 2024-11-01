@@ -12,6 +12,9 @@ import javax.swing.JFrame;
  * @author Amar Pajarito
  */
 public class SchoolEquipmentSystem {
-    SchoolEquipmentSystem app = new SchoolEquipmentSystem();
-    
+    public static void main(String[] args) {
+        java.awt.EventQueue.invokeLater(() -> {
+            new Login().setVisible(true); 
+        });
+    }
 }

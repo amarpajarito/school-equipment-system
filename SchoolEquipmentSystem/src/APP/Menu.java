@@ -4,6 +4,9 @@
  */
 package APP;
 
+import javax.swing.JOptionPane;
+import LIB.DatabaseToCSVExporter;
+
 /**
  *
  * @author Amar Pajarito
@@ -58,7 +61,7 @@ public class Menu extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(255, 0, 0));
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Add Equipments");
+        jButton2.setText("Export to CSV");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -142,6 +145,11 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        DatabaseToCSVExporter exporter = new DatabaseToCSVExporter();
+        
+        exporter.exportToCSV();
+        
+        JOptionPane.showMessageDialog(this, "Data has been exported successfully!");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
