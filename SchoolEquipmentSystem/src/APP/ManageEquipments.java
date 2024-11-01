@@ -30,7 +30,9 @@ public class ManageEquipments extends javax.swing.JFrame {
     
     public ManageEquipments() {
         initComponents();
-        setLocationRelativeTo(null); 
+        setLocationRelativeTo(null);
+        setTitle("ManageEquipments"); 
+        setResizable(false);
         update();
     }
     
