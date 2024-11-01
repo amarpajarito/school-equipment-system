@@ -24,6 +24,8 @@ public class Login extends javax.swing.JFrame {
         setTitle("SEAM Login"); 
         setResizable(false);
     }
+    
+    //comment sample
 
     /**
      * This method is called from within the constructor to initialize the form.
