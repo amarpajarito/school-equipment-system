@@ -14,15 +14,15 @@ import java.sql.SQLException;
  */
 
 public class Equipment implements Backend {
-    protected String equipmentID;
+    protected int id;
     protected String name;
     protected String type;
     protected String condition;
     protected Room location; 
-    protected String quantity;
+    protected int quantity;
 
-    public Equipment(String id, String name, String type, String condition, Room location, String quantity) {
-        this.equipmentID = id;
+    public Equipment(int id, String name, String type, String condition, Room location, int quantity) {
+        this.id = id;
         this.name = name;
         this.type = type;
         this.condition = condition;
@@ -32,12 +32,12 @@ public class Equipment implements Backend {
 
     public Equipment(String[] str) {
         if (str.length == 6) {
-            this.equipmentID = str[0];
+            this.id = Integer.parseInt(str[0]);
             this.name = str[1];
             this.type = str[2];
             this.condition = str[3];
             this.location = new Room(str[4]); 
-            this.quantity = str[5];
+            this.quantity = Integer.parseInt(str[5]);
         } else {
             throw new IllegalArgumentException("Array must have exactly 6 elements.");
         }
@@ -52,12 +52,12 @@ public class Equipment implements Backend {
             Connection conn = connect.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(query);
 
-            pstmt.setString(1, equipmentID);
+            pstmt.setInt(1, id);
             pstmt.setString(2, name);
             pstmt.setString(3, type);
             pstmt.setString(4, condition);
             pstmt.setString(5, location.getRoom());
-            pstmt.setString(6, quantity);
+            pstmt.setInt(6, quantity);
             pstmt.executeUpdate();
 
             conn.close();
