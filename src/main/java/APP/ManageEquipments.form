@@ -283,11 +283,10 @@
         <Component class="javax.swing.JComboBox" name="locationBox">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
+              <StringArray count="3">
                 <StringItem index="0" value="MKT310 "/>
                 <StringItem index="1" value="MKT410 "/>
                 <StringItem index="2" value="MKT501"/>
-                <StringItem index="3" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -422,13 +421,12 @@
         <Component class="javax.swing.JComboBox" name="conditionBox">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
+              <StringArray count="5">
                 <StringItem index="0" value="New"/>
                 <StringItem index="1" value="Good"/>
                 <StringItem index="2" value="Needs Repair"/>
                 <StringItem index="3" value="For Replacement"/>
                 <StringItem index="4" value="Lost"/>
-                <StringItem index="5" value=" "/>
               </StringArray>
             </Property>
           </Properties>

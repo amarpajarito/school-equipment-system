@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ManageEquipments extends javax.swing.JFrame {
 
-    private int selectedEquipmentID = 0; // This stores the selected equipment ID from the UI
+    private int selectedEquipmentID = 0;
 
     public ManageEquipments() {
         initComponents();
@@ -51,14 +51,14 @@ public class ManageEquipments extends javax.swing.JFrame {
             ResultSet rs = stmt.executeQuery("SELECT * FROM EQUIPMENT;");
 
             while (rs.next()) {
-                String equipmentID = String.valueOf(rs.getInt("equipmentID")); // ID from the database
+                int id = rs.getInt("equipmentID");
                 String name = rs.getString("name");
                 String type = rs.getString("type");
                 String condition = rs.getString("condition");
                 String location = rs.getString("location");
-                String quantity = String.valueOf(rs.getInt("quantity"));
+                int quantity = rs.getInt("quantity");
 
-                String[] rowData = {equipmentID, name, type, condition, location, quantity};
+                String[] rowData = {String.valueOf(id), name, type, condition, location, String.valueOf(quantity)};
                 tableModel.addRow(rowData);
             }
             conn.close();
@@ -67,25 +67,23 @@ public class ManageEquipments extends javax.swing.JFrame {
         }
     }
 
-    // Event
-
     public void register() {
         if (selectedEquipmentID != 0) {
             JOptionPane.showMessageDialog(this, "ERROR: Equipment Exists In The Database!");
         } else {
             try {
-                String equipmentID = idText.getText(); // Use this for new equipment registration
+                int id = Integer.parseInt(idText.getText());
                 String name = nameText.getText();
                 String type = String.valueOf(typeBox.getSelectedItem());
                 String condition = String.valueOf(conditionBox.getSelectedItem());
                 String locationName = String.valueOf(locationBox.getSelectedItem());
-                String quantity = quantityText.getText();
+                int quantity = Integer.parseInt(quantityText.getText());
 
-                if ("".equals(equipmentID) || "".equals(name) || "".equals(type) || "".equals(condition) || "".equals(locationName) || "".equals(quantity)) {
+                if ("".equals(name) || "".equals(type) || "".equals(condition) || "".equals(locationName)) {
                     JOptionPane.showMessageDialog(this, "ERROR: Insufficient Information!");
                 } else {
                     Room location = new Room(locationName);
-                    IFacade create = new Facade(new Equipment(equipmentID, name, type, condition, location, quantity));
+                    IFacade create = new Facade(new Equipment(id, name, type, condition, location, quantity));
                     create.registerEquipment();
                     update();
                 }
@@ -104,9 +102,9 @@ public class ManageEquipments extends javax.swing.JFrame {
                 String type = String.valueOf(typeBox.getSelectedItem());
                 String condition = String.valueOf(conditionBox.getSelectedItem());
                 String location = String.valueOf(locationBox.getSelectedItem());
-                String quantity = quantityText.getText();
+                int quantity = Integer.parseInt(quantityText.getText());
 
-                if ("".equals(name) || "".equals(type) || "".equals(condition) || "".equals(location) || "".equals(quantity)) {
+                if ("".equals(name) || "".equals(type) || "".equals(condition) || "".equals(location)) {
                     JOptionPane.showMessageDialog(this, "ERROR: Insufficient Information!");
                     return;
                 }
@@ -120,8 +118,8 @@ public class ManageEquipments extends javax.swing.JFrame {
                     pstmt.setString(2, type);
                     pstmt.setString(3, condition);
                     pstmt.setString(4, location);
-                    pstmt.setInt(5, Integer.parseInt(quantity));
-                    pstmt.setInt(6, selectedEquipmentID); // Update using the selectedEquipmentID
+                    pstmt.setInt(5, quantity);
+                    pstmt.setInt(6, selectedEquipmentID);
 
                     int rowsUpdated = pstmt.executeUpdate();
                     if (rowsUpdated > 0) {
@@ -174,11 +172,7 @@ public class ManageEquipments extends javax.swing.JFrame {
             }
         }
     }
-
-
-
-
-      
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -254,7 +248,7 @@ public class ManageEquipments extends javax.swing.JFrame {
 
         typeBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Air Conditioner", "Electric Fan", "Personal Computer (PC)", "Television (TV)", "White Board" }));
 
-        locationBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MKT310 ", "MKT410 ", "MKT501", " " }));
+        locationBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MKT310 ", "MKT410 ", "MKT501" }));
 
         jLabel1.setForeground(new java.awt.Color(248, 246, 240));
         jLabel1.setText("ID:");
@@ -316,7 +310,7 @@ public class ManageEquipments extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(248, 246, 240));
         jLabel7.setText("BIRINGAN STATE UNIVERSITY");
 
-        conditionBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "New", "Good", "Needs Repair", "For Replacement", "Lost", " " }));
+        conditionBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "New", "Good", "Needs Repair", "For Replacement", "Lost" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
