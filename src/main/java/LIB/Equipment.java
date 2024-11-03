@@ -14,15 +14,13 @@ import java.sql.SQLException;
  */
 
 public class Equipment implements Backend {
-    protected int id;
     protected String name;
     protected String type;
     protected String condition;
     protected Room location; 
     protected int quantity;
 
-    public Equipment(int id, String name, String type, String condition, Room location, int quantity) {
-        this.id = id;
+    public Equipment(String name, String type, String condition, Room location, int quantity) {
         this.name = name;
         this.type = type;
         this.condition = condition;
@@ -31,33 +29,31 @@ public class Equipment implements Backend {
     }
 
     public Equipment(String[] str) {
-        if (str.length == 6) {
-            this.id = Integer.parseInt(str[0]);
-            this.name = str[1];
-            this.type = str[2];
-            this.condition = str[3];
-            this.location = new Room(str[4]); 
-            this.quantity = Integer.parseInt(str[5]);
+        if (str.length == 5) {
+            this.name = str[0];
+            this.type = str[1];
+            this.condition = str[2];
+            this.location = new Room(str[3]); 
+            this.quantity = Integer.parseInt(str[4]);
         } else {
-            throw new IllegalArgumentException("Array must have exactly 6 elements.");
+            throw new IllegalArgumentException("Array must have exactly 5 elements.");
         }
     }
 
     @Override
     public void register() {
-        String query = "INSERT INTO EQUIPMENT (id, name, type, condition, location, quantity) VALUES (?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO EQUIPMENT (name, type, condition, location, quantity) VALUES (?, ?, ?, ?, ?)";
 
         try {
             DatabaseConnection connect = DatabaseConnection.getInstance();
             Connection conn = connect.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(query);
 
-            pstmt.setInt(1, id);
-            pstmt.setString(2, name);
-            pstmt.setString(3, type);
-            pstmt.setString(4, condition);
-            pstmt.setString(5, location.getRoom());
-            pstmt.setInt(6, quantity);
+            pstmt.setString(1, name);
+            pstmt.setString(2, type);
+            pstmt.setString(3, condition);
+            pstmt.setString(4, location.getRoom());
+            pstmt.setInt(5, quantity);
             pstmt.executeUpdate();
 
             conn.close();
@@ -66,6 +62,7 @@ public class Equipment implements Backend {
         }
     }
 }
+
 
 
 

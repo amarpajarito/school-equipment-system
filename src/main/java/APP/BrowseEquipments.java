@@ -79,32 +79,32 @@ public class BrowseEquipments extends javax.swing.JFrame {
     }
     
     public void update(String query) {
-        Connection conn;
-        DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
-        tableModel.getDataVector().removeAllElements();
-        try {
-            connect = DatabaseConnection.getInstance();
-            conn = connect.getConnection();
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
+    Connection conn;
+    DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
+    tableModel.getDataVector().removeAllElements();
+    try {
+        connect = DatabaseConnection.getInstance();
+        conn = connect.getConnection();
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
+        
+        while (rs.next()) {
+            int equipmentID = rs.getInt("equipmentID");
+            String name = rs.getString("name");
+            String type = rs.getString("type");
+            String condition = rs.getString("condition");
+            String location = rs.getString("location");
+            int quantity = rs.getInt("quantity");
             
-            while (rs.next()) {
-                int id = rs.getInt("equipmentID");
-                String name = rs.getString("name");
-                String type = rs.getString("type");
-                String condition = rs.getString("condition");
-                String location = rs.getString("location");
-                int quantity = rs.getInt("quantity");
-                
-                String rowData[] = {String.valueOf(id), name, type, condition, location, String.valueOf(quantity)};
-                tableModel.addRow(rowData);
-            }
-            tableModel.fireTableDataChanged();
-            conn.close();
-        } catch (SQLException e) {
-            System.out.println("ERROR: " + e.getMessage());
+            String rowData[] = {String.valueOf(equipmentID), name, type, condition, location, String.valueOf(quantity)};
+            tableModel.addRow(rowData);
         }
+        tableModel.fireTableDataChanged();
+        conn.close();
+    } catch (SQLException e) {
+        System.out.println("ERROR: " + e.getMessage());
     }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.

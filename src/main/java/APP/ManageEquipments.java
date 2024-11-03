@@ -41,7 +41,6 @@ public class ManageEquipments extends javax.swing.JFrame {
         DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
         tableModel.getDataVector().removeAllElements();
 
-        idText.setText("");
         nameText.setText("");
         typeBox.setSelectedIndex(0);
         locationBox.setSelectedIndex(0);
@@ -54,14 +53,14 @@ public class ManageEquipments extends javax.swing.JFrame {
             ResultSet rs = stmt.executeQuery("SELECT * FROM EQUIPMENT;");
 
             while (rs.next()) {
-                int id = rs.getInt("equipmentID");
+                int equipmentID = rs.getInt("equipmentID");
                 String name = rs.getString("name");
                 String type = rs.getString("type");
                 String condition = rs.getString("condition");
                 String location = rs.getString("location");
                 int quantity = rs.getInt("quantity");
 
-                String[] rowData = {String.valueOf(id), name, type, condition, location, String.valueOf(quantity)};
+                String[] rowData = {String.valueOf(equipmentID), name, type, condition, location, String.valueOf(quantity)};
                 tableModel.addRow(rowData);
             }
             conn.close();
@@ -75,7 +74,6 @@ public class ManageEquipments extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "ERROR: Equipment Exists In The Database!");
         } else {
             try {
-                int id = Integer.parseInt(idText.getText());
                 String name = nameText.getText();
                 String type = String.valueOf(typeBox.getSelectedItem());
                 String condition = String.valueOf(conditionBox.getSelectedItem());
@@ -86,7 +84,7 @@ public class ManageEquipments extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "ERROR: Insufficient Information!");
                 } else {
                     Room location = new Room(locationName);
-                    IFacade create = new Facade(new Equipment(id, name, type, condition, location, quantity));
+                    IFacade create = new Facade(new Equipment(name, type, condition, location, quantity));
                     create.registerEquipment();
                     update();
                 }
@@ -155,14 +153,21 @@ public class ManageEquipments extends javax.swing.JFrame {
                     Connection conn = connect.getConnection();
                     Statement stmt = conn.createStatement();
                     int rowsDeleted = stmt.executeUpdate(query);
+                
                     if (rowsDeleted > 0) {
                         JOptionPane.showMessageDialog(this, "Equipment record deleted successfully.");
                         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
                         int selectedRow = jTable1.getSelectedRow();
                         if (selectedRow != -1) {
-                            model.removeRow(selectedRow);
+                        model.removeRow(selectedRow);
                         }
                         selectedEquipmentID = 0;
+                    
+                        String checkQuery = "SELECT COUNT(*) AS count FROM EQUIPMENT;";
+                        ResultSet rs = stmt.executeQuery(checkQuery);
+                        if (rs.next() && rs.getInt("count") == 0) {
+                            stmt.executeUpdate("DELETE FROM sqlite_sequence WHERE name='EQUIPMENT';");
+                        }
                     } else {
                         JOptionPane.showMessageDialog(this, "ERROR: Record not found.");
                     }
@@ -175,6 +180,7 @@ public class ManageEquipments extends javax.swing.JFrame {
             }
         }
     }
+
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -191,10 +197,8 @@ public class ManageEquipments extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jSeparator2 = new javax.swing.JSeparator();
         typeBox = new javax.swing.JComboBox<>();
-        idText = new javax.swing.JTextField();
         nameText = new javax.swing.JTextField();
         locationBox = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -252,9 +256,6 @@ public class ManageEquipments extends javax.swing.JFrame {
         typeBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Air Conditioner", "Electric Fan", "Personal Computer (PC)", "Television (TV)", "White Board" }));
 
         locationBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MKT310 ", "MKT410 ", "MKT501" }));
-
-        jLabel1.setForeground(new java.awt.Color(248, 246, 240));
-        jLabel1.setText("ID:");
 
         jLabel2.setForeground(new java.awt.Color(248, 246, 240));
         jLabel2.setText("Name:");
@@ -324,15 +325,9 @@ public class ManageEquipments extends javax.swing.JFrame {
                     .addComponent(jSeparator2)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(145, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(nameText, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(nameText, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -389,8 +384,6 @@ public class ManageEquipments extends javax.swing.JFrame {
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
                             .addComponent(jLabel3)
                             .addComponent(typeBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
@@ -447,7 +440,6 @@ public class ManageEquipments extends javax.swing.JFrame {
         int selectedRow = jTable1.getSelectedRow();
         if (selectedRow != -1) { 
             selectedEquipmentID = Integer.parseInt(String.valueOf(jTable1.getValueAt(selectedRow, 0)));
-            idText.setText(String.valueOf(jTable1.getValueAt(selectedRow, 0))); 
             nameText.setText(String.valueOf(jTable1.getValueAt(selectedRow, 1)));
             typeBox.setSelectedItem(String.valueOf(jTable1.getValueAt(selectedRow, 2)));
             conditionBox.setSelectedItem(String.valueOf(jTable1.getValueAt(selectedRow, 3)));
@@ -455,7 +447,6 @@ public class ManageEquipments extends javax.swing.JFrame {
             quantityText.setText(String.valueOf(jTable1.getValueAt(selectedRow, 5)));
         } else {
         selectedEquipmentID = 0; 
-        idText.setText("");
         nameText.setText("");
         typeBox.setSelectedIndex(0);
         conditionBox.setSelectedIndex(0);
@@ -485,12 +476,10 @@ public class ManageEquipments extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> conditionBox;
-    private javax.swing.JTextField idText;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
