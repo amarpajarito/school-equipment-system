@@ -17,9 +17,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class BrowseEquipments extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Report
-     */
     DatabaseConnection connect;
 
     public BrowseEquipments() {
@@ -89,14 +86,14 @@ public class BrowseEquipments extends javax.swing.JFrame {
             ResultSet rs = stmt.executeQuery(query);
             
             while (rs.next()) {
-                String equipmentID = String.valueOf(rs.getInt("equipmentID"));
+                int id = rs.getInt("equipmentID");
                 String name = rs.getString("name");
                 String type = rs.getString("type");
                 String condition = rs.getString("condition");
                 String location = rs.getString("location");
-                String quantity = String.valueOf(rs.getInt("quantity"));
+                int quantity = rs.getInt("quantity");
                 
-                String rowData[] = {equipmentID, name, type, condition, location, quantity};
+                String rowData[] = {String.valueOf(id), name, type, condition, location, String.valueOf(quantity)};
                 tableModel.addRow(rowData);
             }
             tableModel.fireTableDataChanged();
