@@ -33,11 +33,12 @@
         </dependency>
     </dependencies>
     <build>
-    <resources>
-        <resource>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <resources>
+            <resource>
             <directory>src/main/resources</directory>
-        </resource>
-     </resources>
+            </resource>
+        </resources>
     </build>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
