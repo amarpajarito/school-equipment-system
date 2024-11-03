@@ -15,6 +15,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -28,8 +29,10 @@ public class ManageEquipments extends javax.swing.JFrame {
     public ManageEquipments() {
         initComponents();
         setLocationRelativeTo(null);
-        setTitle("ManageEquipments");
+        setTitle("Manage Equipments");
         setResizable(false);
+        ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/bsulogo4.png"));
+        setIconImage(icon.getImage());
         update();
     }
 

@@ -6,6 +6,7 @@ package APP;
 
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.event.KeyEvent;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -24,6 +25,8 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null); 
         setTitle("SEAM Login"); 
         setResizable(false);
+        ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/bsulogo4.png"));
+        setIconImage(icon.getImage());
     }
     
     private void performLogin() {

@@ -4,6 +4,8 @@
  */
 package APP;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Amar Pajarito
@@ -18,6 +20,8 @@ public class Menu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("SEAM Menu"); 
         setResizable(false);
+        ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/bsulogo4.png"));
+        setIconImage(icon.getImage());
     }
 
     /**

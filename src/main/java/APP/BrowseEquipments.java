@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -24,6 +25,8 @@ public class BrowseEquipments extends javax.swing.JFrame {
         setLocationRelativeTo(null); 
         setTitle("Browse Equipments"); 
         setResizable(false);
+        ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/bsulogo4.png"));
+        setIconImage(icon.getImage());
         update("SELECT * FROM EQUIPMENT;");
         fetchType();
         fetchCondition();
