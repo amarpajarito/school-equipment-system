@@ -271,16 +271,16 @@ public class BrowseEquipments extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         String type = String.valueOf(typeBox.getSelectedItem());
-    String condition = String.valueOf(conditionBox.getSelectedItem());
-    String location = String.valueOf(locationBox.getSelectedItem());
+        String condition = String.valueOf(conditionBox.getSelectedItem());
+        String location = String.valueOf(locationBox.getSelectedItem());
 
-    String query;
+        String query;
 
-    if ("Any".equals(type) && "Any".equals(condition) && "Any".equals(location)) {
-        query = "SELECT * FROM EQUIPMENT;";
-    } else {
-        query = "SELECT * FROM EQUIPMENT WHERE";
-        boolean filterExists = false;
+        if ("Any".equals(type) && "Any".equals(condition) && "Any".equals(location)) {
+            query = "SELECT * FROM EQUIPMENT;";
+        } else {
+            query = "SELECT * FROM EQUIPMENT WHERE";
+            boolean filterExists = false;
 
         if (!"Any".equals(type)) {
             query += " type = '" + type + "'";
@@ -303,10 +303,10 @@ public class BrowseEquipments extends javax.swing.JFrame {
             filterExists = true;
         }
 
-        query += ";";
-    }
+            query += ";";
+        }
     
-    update(query);
+        update(query);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
