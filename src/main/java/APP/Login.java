@@ -5,6 +5,7 @@
 package APP;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -23,6 +24,15 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null); 
         setTitle("SEAM Login"); 
         setResizable(false);
+    }
+    
+    private void performLogin() {
+        if ("admin".equals(username.getText()) && "pass".equals(String.valueOf(password.getPassword()))) {
+            this.dispose();
+            new Menu().setVisible(true);
+        } else {
+        JOptionPane.showMessageDialog(this, "ERROR: Invalid Username or Password.");
+        }
     }
   
     /**
@@ -70,6 +80,12 @@ public class Login extends javax.swing.JFrame {
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+            }
+        });
+
+        password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordKeyPressed(evt);
             }
         });
 
@@ -181,18 +197,20 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        if("admin".equals(username.getText())&&"pass".equals(String.valueOf(password.getPassword()))){
-            this.dispose();
-            new Menu().setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(this, "ERROR: Invalid Username or Password.");
-        }
+        performLogin();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        performLogin(); // Call the login method
+        }
+    }//GEN-LAST:event_passwordKeyPressed
 
     /**
      * @param args the command line arguments
