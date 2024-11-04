@@ -119,7 +119,8 @@ public class ReplacementLostEquipmentsReport extends javax.swing.JFrame {
 
         jSeparator4.setForeground(new java.awt.Color(248, 246, 240));
 
-        allequipment.setBackground(new java.awt.Color(183, 183, 183));
+        allequipment.setBackground(new java.awt.Color(248, 246, 240));
+        allequipment.setForeground(new java.awt.Color(0, 0, 0));
         allequipment.setText("Back");
         allequipment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,7 +133,7 @@ public class ReplacementLostEquipmentsReport extends javax.swing.JFrame {
         jLabel7.setText("REPLACEMENT EQUIPMENTS");
 
         jButton6.setBackground(new java.awt.Color(51, 204, 0));
-        jButton6.setForeground(new java.awt.Color(248, 246, 240));
+        jButton6.setForeground(new java.awt.Color(0, 0, 0));
         jButton6.setText("Generate");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,10 +150,6 @@ public class ReplacementLostEquipmentsReport extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSeparator3)
-                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(99, 99, 99)
                 .addComponent(jLabel7)
@@ -172,11 +169,9 @@ public class ReplacementLostEquipmentsReport extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
+            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 848, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 860, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,7 +198,7 @@ public class ReplacementLostEquipmentsReport extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(104, 104, 104)
                     .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(319, Short.MAX_VALUE)))
+                    .addContainerGap(354, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

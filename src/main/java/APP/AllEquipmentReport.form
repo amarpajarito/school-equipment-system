@@ -43,11 +43,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jSeparator3" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
@@ -69,12 +64,9 @@
                   <Component id="jScrollPane1" min="-2" pref="520" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
+              <Component id="jSeparator3" alignment="1" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jSeparator4" pref="848" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jSeparator4" alignment="1" pref="860" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -108,7 +100,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                       <Component id="jSeparator4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="319" max="32767" attributes="0"/>
+                      <EmptySpace pref="354" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -161,7 +153,10 @@
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="b7" green="b7" red="b7" type="rgb"/>
+              <Color blue="f0" green="f6" red="f8" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Back"/>
           </Properties>
@@ -186,7 +181,7 @@
               <Color blue="0" green="cc" red="33" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f0" green="f6" red="f8" type="rgb"/>
+              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Generate"/>
           </Properties>

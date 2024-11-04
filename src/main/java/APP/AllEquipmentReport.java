@@ -117,7 +117,8 @@ public class AllEquipmentReport extends javax.swing.JFrame {
 
         jSeparator4.setForeground(new java.awt.Color(248, 246, 240));
 
-        jButton2.setBackground(new java.awt.Color(183, 183, 183));
+        jButton2.setBackground(new java.awt.Color(248, 246, 240));
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,7 +131,7 @@ public class AllEquipmentReport extends javax.swing.JFrame {
         jLabel7.setText("ALL EQUIPMENTS");
 
         jButton6.setBackground(new java.awt.Color(51, 204, 0));
-        jButton6.setForeground(new java.awt.Color(248, 246, 240));
+        jButton6.setForeground(new java.awt.Color(0, 0, 0));
         jButton6.setText("Generate");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,10 +148,6 @@ public class AllEquipmentReport extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSeparator3)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel7)
@@ -168,11 +165,9 @@ public class AllEquipmentReport extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
+            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 848, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 860, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,7 +194,7 @@ public class AllEquipmentReport extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(104, 104, 104)
                     .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(319, Short.MAX_VALUE)))
+                    .addContainerGap(354, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
