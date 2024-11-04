@@ -25,7 +25,7 @@ public class BrowseEquipments extends javax.swing.JFrame {
         setLocationRelativeTo(null); 
         setTitle("Browse Equipments"); 
         setResizable(false);
-        ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/bsulogo4.png"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/ssulogo.png"));
         setIconImage(icon.getImage());
         update("SELECT * FROM EQUIPMENT;");
         fetchType();
@@ -151,8 +151,7 @@ public class BrowseEquipments extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jButton5.setBackground(new java.awt.Color(122, 178, 211));
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
+        jButton5.setBackground(new java.awt.Color(85, 194, 218));
         jButton5.setText("Apply Filter");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,7 +177,6 @@ public class BrowseEquipments extends javax.swing.JFrame {
         jLabel8.setText("Location:");
 
         jButton2.setBackground(new java.awt.Color(248, 246, 240));
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

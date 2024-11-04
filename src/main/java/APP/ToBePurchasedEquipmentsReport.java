@@ -27,7 +27,7 @@ public class ToBePurchasedEquipmentsReport extends javax.swing.JFrame {
         setLocationRelativeTo(null); 
         setTitle("Replacement and Lost Equipments");
         setResizable(false);
-        ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/bsulogo4.png"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/ssulogo.png"));
         setIconImage(icon.getImage());
         update("SELECT * FROM EQUIPMENT WHERE condition IN ('For Replacement', 'Lost');");
     }

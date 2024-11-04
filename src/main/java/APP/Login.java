@@ -58,7 +58,7 @@ public class Login extends javax.swing.JFrame {
         JLabel2 = new javax.swing.JLabel();
         JLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        bsulogo = new javax.swing.JLabel();
+        ssulogo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -163,12 +163,12 @@ public class Login extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(128, 0, 0));
 
-        bsulogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/bsulogo4.png"))); // NOI18N
-        bsulogo.setMaximumSize(new java.awt.Dimension(500, 500));
+        ssulogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/ssulogo.png"))); // NOI18N
+        ssulogo.setMaximumSize(new java.awt.Dimension(500, 500));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel4.setText("Copyright © 2024 BirStateU. All rights reserved. ");
+        jLabel4.setText("Copyright © 2024 SEAMStateU. All rights reserved. ");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -180,16 +180,16 @@ public class Login extends javax.swing.JFrame {
                         .addGap(88, 88, 88)
                         .addComponent(jLabel4))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(bsulogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                        .addGap(59, 59, 59)
+                        .addComponent(ssulogo, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bsulogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addComponent(ssulogo, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
                 .addComponent(jLabel4)
                 .addGap(21, 21, 21))
         );
@@ -279,7 +279,6 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLabel2;
     private javax.swing.JLabel JLabel3;
-    private javax.swing.JLabel bsulogo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -289,6 +288,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField password;
+    private javax.swing.JLabel ssulogo;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

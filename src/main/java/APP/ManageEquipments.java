@@ -31,7 +31,7 @@ public class ManageEquipments extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("Manage Equipments");
         setResizable(false);
-        ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/bsulogo4.png"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/ssulogo.png"));
         setIconImage(icon.getImage());
         update();
     }
@@ -274,7 +274,6 @@ public class ManageEquipments extends javax.swing.JFrame {
         jLabel6.setText("Quantity:");
 
         jButton1.setBackground(new java.awt.Color(248, 246, 240));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Cancel");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -282,8 +281,7 @@ public class ManageEquipments extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(122, 178, 211));
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
+        jButton4.setBackground(new java.awt.Color(85, 194, 218));
         jButton4.setText("Register");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -292,7 +290,6 @@ public class ManageEquipments extends javax.swing.JFrame {
         });
 
         jButton5.setBackground(new java.awt.Color(246, 114, 128));
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
         jButton5.setText("Remove");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -301,7 +298,6 @@ public class ManageEquipments extends javax.swing.JFrame {
         });
 
         jButton6.setBackground(new java.awt.Color(126, 212, 173));
-        jButton6.setForeground(new java.awt.Color(0, 0, 0));
         jButton6.setText("Update");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
