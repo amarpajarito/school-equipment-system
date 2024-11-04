@@ -73,8 +73,6 @@ public class Login extends javax.swing.JFrame {
 
         jLabel3.setText("Password:");
 
-        jButton1.setBackground(new java.awt.Color(153, 0, 18));
-        jButton1.setForeground(new java.awt.Color(248, 246, 240));
         jButton1.setText("Cancel");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +101,6 @@ public class Login extends javax.swing.JFrame {
         JLabel2.setToolTipText("");
 
         JLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 10)); // NOI18N
-        JLabel3.setForeground(new java.awt.Color(153, 0, 18));
         JLabel3.setText("SCHOOL EQUIPMENT ACQUISITION & MONITORING SYSTEM");
         JLabel3.setToolTipText("");
 
