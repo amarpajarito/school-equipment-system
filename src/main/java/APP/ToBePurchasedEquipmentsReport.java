@@ -25,7 +25,7 @@ public class ToBePurchasedEquipmentsReport extends javax.swing.JFrame {
     public ToBePurchasedEquipmentsReport() {
         initComponents();
         setLocationRelativeTo(null); 
-        setTitle("To be purchased Equipments");
+        setTitle("To be purchased Equipments Export");
         setResizable(false);
         ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/ssulogo.png"));
         setIconImage(icon.getImage());

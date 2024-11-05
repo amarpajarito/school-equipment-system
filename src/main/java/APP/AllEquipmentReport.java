@@ -25,7 +25,7 @@ public class AllEquipmentReport extends javax.swing.JFrame {
     public AllEquipmentReport() {
         initComponents();
         setLocationRelativeTo(null); 
-        setTitle("Replacement and Lost Equipments");
+        setTitle("All Equipment Export");
         setResizable(false);
         ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/ssulogo.png"));
         setIconImage(icon.getImage());
