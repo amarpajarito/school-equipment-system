@@ -67,9 +67,9 @@ public class AllEquipmentReport extends javax.swing.JFrame {
         String selectedFormat = (String) jComboBox1.getSelectedItem();
 
         if ("Excel".equals(selectedFormat)) {
-            exporter.exportReplaceLostEquipmentsToExcel();
+            exporter.exportAllEquipmentsToCSV();
         } else if ("CSV".equals(selectedFormat)) {
-            exporter.exportReplaceLostEquipmentsToCSV();
+            exporter.exportAllEquipmentsToExcel();
         } else {
             JOptionPane.showMessageDialog(this, "Please select a valid export format.");
         }

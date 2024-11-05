@@ -25,7 +25,7 @@ public class ToBePurchasedEquipmentsReport extends javax.swing.JFrame {
     public ToBePurchasedEquipmentsReport() {
         initComponents();
         setLocationRelativeTo(null); 
-        setTitle("Replacement and Lost Equipments");
+        setTitle("To be purchased Equipments");
         setResizable(false);
         ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/ssulogo.png"));
         setIconImage(icon.getImage());
@@ -120,7 +120,6 @@ public class ToBePurchasedEquipmentsReport extends javax.swing.JFrame {
         jSeparator4.setForeground(new java.awt.Color(248, 246, 240));
 
         allequipment.setBackground(new java.awt.Color(248, 246, 240));
-        allequipment.setForeground(new java.awt.Color(0, 0, 0));
         allequipment.setText("Back");
         allequipment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,7 +132,6 @@ public class ToBePurchasedEquipmentsReport extends javax.swing.JFrame {
         jLabel7.setText("REPLACEMENT EQUIPMENTS");
 
         jButton6.setBackground(new java.awt.Color(51, 204, 0));
-        jButton6.setForeground(new java.awt.Color(0, 0, 0));
         jButton6.setText("Generate");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,7 +164,7 @@ public class ToBePurchasedEquipmentsReport extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(allequipment, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
             .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
