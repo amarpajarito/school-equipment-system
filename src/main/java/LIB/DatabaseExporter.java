@@ -23,7 +23,7 @@ import javax.swing.JFileChooser;
  */
 public class DatabaseExporter {
 
-    public void exportAllEquipmentsToCSV() {
+    public void exportAllEquipmentsToExcel() {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Specify a file to save");
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -62,7 +62,7 @@ public class DatabaseExporter {
         }
     }
 
-    public void exportAllEquipmentsToExcel() {
+    public void exportAllEquipmentsToCSV() {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Specify a file to save");
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
