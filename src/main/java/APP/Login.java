@@ -25,7 +25,7 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null); 
         setTitle("SEAM Login"); 
         setResizable(false);
-        ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/bsulogo4.png"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/ssulogo.png"));
         setIconImage(icon.getImage());
     }
     
