@@ -24,10 +24,13 @@ import javax.swing.JFileChooser;
 public class DatabaseExporter {
 
     public void exportFilteredEquipmentsToCSV(String query) {
+        String userHome = System.getProperty("user.home");
+        File downloadsFolder = new File(userHome, "Downloads");
+        
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Specify a file to save");
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        fileChooser.setSelectedFile(new File("school_equipment_report.csv"));
+        fileChooser.setSelectedFile(new File(downloadsFolder, "school_equipment_report.csv"));
         int userSelection = fileChooser.showSaveDialog(null);
 
         if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -64,10 +67,13 @@ public class DatabaseExporter {
     }
     
     public void exportFilteredEquipmentsToExcel(String query) {
+        String userHome = System.getProperty("user.home");
+        File downloadsFolder = new File(userHome, "Downloads");
+        
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Specify a file to save");
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        fileChooser.setSelectedFile(new File("school_equipment_report.xlsx"));
+        fileChooser.setSelectedFile(new File(downloadsFolder, "school_equipment_report.xlsx"));
         int userSelection = fileChooser.showSaveDialog(null);
 
         if (userSelection == JFileChooser.APPROVE_OPTION) {
