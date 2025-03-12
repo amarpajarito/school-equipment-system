@@ -168,8 +168,8 @@ public class BrowseEquipments extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(163, 29, 29));
-        jPanel2.setPreferredSize(new java.awt.Dimension(819, 110));
+        jPanel2.setBackground(new java.awt.Color(125, 10, 10));
+        jPanel2.setPreferredSize(new java.awt.Dimension(819, 100));
 
         jLabel7.setBackground(new java.awt.Color(163, 29, 29));
         jLabel7.setFont(new java.awt.Font("Segoe UI Black", 0, 48)); // NOI18N
@@ -188,9 +188,9 @@ public class BrowseEquipments extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(15, 15, 15)
                 .addComponent(jLabel7)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.NORTH);
@@ -198,7 +198,7 @@ public class BrowseEquipments extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(236, 220, 191));
         jPanel3.setPreferredSize(new java.awt.Dimension(819, 141));
 
-        jButton5.setBackground(new java.awt.Color(163, 29, 29));
+        jButton5.setBackground(new java.awt.Color(125, 10, 10));
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Reset");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -243,7 +243,7 @@ public class BrowseEquipments extends javax.swing.JFrame {
         jLabel8.setText("Location:");
 
         jButton2.setBackground(new java.awt.Color(248, 242, 222));
-        jButton2.setText("Back");
+        jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -279,7 +279,7 @@ public class BrowseEquipments extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(locationBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
@@ -287,17 +287,17 @@ public class BrowseEquipments extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(typeBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(26, 26, 26)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.CENTER);
 
         jPanel4.setBackground(new java.awt.Color(236, 220, 191));
-        jPanel4.setPreferredSize(new java.awt.Dimension(819, 235));
+        jPanel4.setPreferredSize(new java.awt.Dimension(819, 245));
 
         jTable1.setBackground(new java.awt.Color(236, 220, 191));
         jTable1.getTableHeader().setBackground(new Color(248,242,222));
@@ -324,11 +324,11 @@ public class BrowseEquipments extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 235, Short.MAX_VALUE)
+            .addGap(0, 245, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)))
+                    .addGap(0, 14, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         getContentPane().add(jPanel4, java.awt.BorderLayout.SOUTH);

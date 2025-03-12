@@ -227,7 +227,7 @@ public class ManageEquipments extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel3.setBackground(new java.awt.Color(163, 29, 29));
+        jPanel3.setBackground(new java.awt.Color(125, 10, 10));
         jPanel3.setPreferredSize(new java.awt.Dimension(875, 101));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
@@ -284,7 +284,8 @@ public class ManageEquipments extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(85, 194, 218));
+        jButton4.setBackground(new java.awt.Color(125, 10, 10));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Register");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -292,7 +293,8 @@ public class ManageEquipments extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(246, 114, 128));
+        jButton5.setBackground(new java.awt.Color(184, 33, 50));
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Remove");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -300,7 +302,8 @@ public class ManageEquipments extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(126, 212, 173));
+        jButton6.setBackground(new java.awt.Color(0, 48, 146));
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Update");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -374,13 +377,13 @@ public class ManageEquipments extends javax.swing.JFrame {
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel4, java.awt.BorderLayout.CENTER);
 
         jPanel5.setBackground(new java.awt.Color(128, 0, 0));
-        jPanel5.setPreferredSize(new java.awt.Dimension(876, 235));
+        jPanel5.setPreferredSize(new java.awt.Dimension(876, 230));
 
         jTable1.setBackground(new java.awt.Color(236, 220, 191));
         jTable1.getTableHeader().setBackground(new Color(248,242,222));
