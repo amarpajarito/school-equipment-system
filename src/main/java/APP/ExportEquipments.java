@@ -26,7 +26,7 @@ public class ExportEquipments extends javax.swing.JFrame {
     public ExportEquipments() {
         initComponents();
         setLocationRelativeTo(null); 
-        setTitle("SEAM Browse Equipments"); 
+        setTitle("SEAM Export Equipments"); 
         setResizable(false);
         ImageIcon icon = new ImageIcon(getClass().getResource("/IMAGES/ssulogo.png"));
         setIconImage(icon.getImage());
